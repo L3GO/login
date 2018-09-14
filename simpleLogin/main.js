@@ -6,10 +6,10 @@ var newlink = protocol + "//" + host + path;
 window.onload = init;
 
 function init() {
-  if (window.location.pathname == "/signUp.html") {
+  if (window.location.pathname == "/simpleLogin/signUp.html") {
     var signUp = document.getElementById("signUp");
     signUp.onclick = signup;
-  } else if (window.location.pathname == "/login.html") {
+  } else if (window.location.pathname == "/simpleLogin/login.html") {
     var Login = document.getElementById("login");
     Login.onclick = login;
   }
@@ -33,7 +33,7 @@ function signup() {
   } else {
     message.innerHTML = "please enter a valid email";
   }
-  path = "/login.html";
+  path = "/simpleLogin/login.html";
   let newlink = protocol + "//" + host + path;
 
   window.location.replace(newlink);
@@ -49,7 +49,7 @@ function login() {
   //check if user match exist
   if (matchUser == null || matchUser == "") {
     message.innerHTML = "please SignUp first";
-    path = "/signUp.html";
+    path = "/simpleLogin/signUp.html";
     let newlink = protocol + "//" + host + path;
     setTimeout(function() {
       window.location.replace(newlink);
@@ -58,14 +58,14 @@ function login() {
     // compare here
     if (email == matchUser.email) {
       if (password == matchUser.password) {
-        path = "/landingPage.html";
+        path = "/simpleLogin/landingPage.html";
         let newlink = protocol + "//" + host + path;
         window.location.replace(newlink);
       } else {
-        password.innerHTML = "";
+        message.innerHTML = "invalid email or password";
       }
     } else {
-      email.innerHTML = "";
+      message.innerHTML = "invalid email or password";
     }
   }
 }
