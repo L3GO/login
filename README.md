@@ -10,6 +10,6 @@
 - its a great way to test things without breaking anything.
 
 \*Note
--this is my first working app create please let me know if something does not work
+-this is my first working app that i have created so please let me know if something does not work
 
 #### Thanks and have fun using it
