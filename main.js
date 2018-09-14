@@ -1,30 +1,61 @@
+var protocol = window.location.protocol;
+var host = window.location.host;
+var path = path || "";
+var newlink = protocol + "//" + host + path;
+
 window.onload = init;
 
 function init() {
-  var signUp = document.getElementById("signUp");
-  signUp.onclick = signup();
+  if (window.location.pathname == "/signUp.html") {
+    var signUp = document.getElementById("signUp");
+    signUp.onclick = signup;
+  } else if (window.location.pathname == "/login.html") {
+    var Login = document.getElementById("login");
+    Login.onclick = login;
+  }
 }
 
 function signup() {
-  var email = document.getElementById("email").value;
-  var password = document.getElementById("password").value;
-  var message = document.getElementById("message");
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let message = document.getElementById("message");
 
   if (email.includes("@") && email.includes(".com")) {
-    console.log("pass");
-
     if (password.length > 6) {
-      var user = user || {
+      var userObject = {
         email: email,
         password: password
       };
-      store(user);
+      let user = JSON.stringify(userObject);
+      localStorage.setItem("userCredential", user);
+      console.log(localStorage);
     }
   } else {
     message.innerHTML = "please enter a valid email";
   }
+  path = "/login.html";
+  let newlink = protocol + "//" + host + path;
+
+  window.location.replace(newlink);
 }
 
-// function store(user) {
-//   localStorage.setItem("user", JSON.stringify(user));
-// }
+function login() {
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let message = document.getElementById("message");
+
+  // retrive
+  var matchUser = JSON.parse(localStorage.getItem("userCredential"));
+  // compare here
+  if (email == matchUser.email) {
+    if (password == matchUser.password) {
+      path = "/landingPage.html";
+      let newlink = protocol + "//" + host + path;
+      window.location.replace(newlink);
+    } else {
+      password.innerHTML = "";
+    }
+  } else {
+    email.innerHTML = "";
+  }
+}

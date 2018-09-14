@@ -60,9 +60,22 @@ input[type=button] {
     left: 20px;
     bottom: 20px;
     right: 20px;
-    background: #fff;
+    background: rgba(0, 0, 0, .1);
     padding: 50px;
     box-sizing: border-box;
     text-align: center;
     box-shadow: 0 10px 15px rgba(0, 0, 0, .4);
+}
+
+.test {
+    margin-left: 90%;
+    text-decoration: none;
+    font-size: 1.3em;
+    color: #262626;
+}
+
+
+
+.test:visited .test:link {
+    color: #262626;
 }
