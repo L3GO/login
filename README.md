@@ -1,20 +1,15 @@
-# simple login template
+# Simple Login Template with validation
 
 ## design was inpsired by Online Tutorials
 
-## CSS Creative DIV Shape with Cool Hover Effects
+- checkout their CSS Creative DIV Shape with Cool Hover Effects
 
-### todo on sign up
+### What it is ?
 
-- write code for getting the input
-- code for storing the input in localStorage
-- redirect to login page
+- it's a simple sign up and login page that uses localstorage
+- its a great way to test things without breaking anything.
 
-### todo on login
+\*Note
+-this is my first working app create please let me know if something does not work
 
-- validate input against localStorage input
-- redirect to landing page or sign up page
-
-### bonus todo
-
-- hash the password before storing in localStorage
+#### Thanks and have fun using it

@@ -46,16 +46,25 @@ function login() {
 
   // retrive
   var matchUser = JSON.parse(localStorage.getItem("userCredential"));
-  // compare here
-  if (email == matchUser.email) {
-    if (password == matchUser.password) {
-      path = "/landingPage.html";
-      let newlink = protocol + "//" + host + path;
+  //check if user match exist
+  if (matchUser == null || matchUser == "") {
+    message.innerHTML = "please SignUp first";
+    path = "/signUp.html";
+    let newlink = protocol + "//" + host + path;
+    setTimeout(function() {
       window.location.replace(newlink);
-    } else {
-      password.innerHTML = "";
-    }
+    }, 10000);
   } else {
-    email.innerHTML = "";
+    // compare here
+    if (email == matchUser.email) {
+      if (password == matchUser.password) {
+        path = "/landingPage.html";
+        let newlink = protocol + "//" + host + path;
+      } else {
+        password.innerHTML = "";
+      }
+    } else {
+      email.innerHTML = "";
+    }
   }
 }
