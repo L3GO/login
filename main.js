@@ -60,6 +60,7 @@ function login() {
       if (password == matchUser.password) {
         path = "/landingPage.html";
         let newlink = protocol + "//" + host + path;
+        window.location.replace(newlink);
       } else {
         password.innerHTML = "";
       }
