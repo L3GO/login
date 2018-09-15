@@ -90,7 +90,7 @@ function login() {
     if (window.location.host == "") {
       setTimeout(function() {
         window.location.replace(newPathname);
-      });
+      }, 10000);
     } else {
       setTimeout(function() {
         window.location.replace(newlink);
