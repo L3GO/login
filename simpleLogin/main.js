@@ -90,11 +90,11 @@ function login() {
     if (window.location.host == "") {
       setTimeout(function() {
         window.location.replace(newPathname);
-      }, 100000);
+      }, 10000);
     } else {
       setTimeout(function() {
         window.location.replace(newlink);
-      }, 100000);
+      }, 10000);
     }
   } else {
     // compare here
